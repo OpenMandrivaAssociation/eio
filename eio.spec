@@ -4,7 +4,7 @@
 
 Summary: Enlightenment Input Output Library
 Name: eio
-Version: 0.1.0.54504
+Version: 0.1.0.55225
 Release: %mkrel 1
 License: LGPLv2+
 Group: Graphical desktop/Enlightenment
