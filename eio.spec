@@ -11,25 +11,25 @@
 #cd ..; \
 #tar -Jcf eio-$PKG_VERSION.tar.xz eio/ --exclude .svn --exclude .*ignore
 
-%define svndate 20120103
-%define svnrev 	66800
+#% define svndate 20120103
+#% define svnrev 	66800
 
-%define	major	0
+%define	major	1
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
 
 Summary: 	E17 Input Output Library
 Name: 		eio
-Version:	0.1.0.%{svnrev}
-Release:	0.%{svndate}.1
+Version:	1.0.1
+Release:	1
 License: 	LGPLv2+
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
-Source0:	%{name}-%{version}.tar.xz
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.gz
 
 Buildrequires: gettext-devel
-BuildRequires: pkgconfig(ecore) >= 1.0.0
-BuildRequires: pkgconfig(eina) >= 1.0.0
+BuildRequires: pkgconfig(ecore) >= 1.2.1
+BuildRequires: pkgconfig(eina) >= 1.2.1
 
 %description
 This library is intended to provide non blocking IO by using thread for all
@@ -56,7 +56,7 @@ Provides:   %{name}-devel = %{version}-%{release}
 Headers and libraries from %{name}
 
 %prep
-%setup -qn %{name}
+%setup -q
 
 %build
 NOCONFIGURE=1 ./autogen.sh
