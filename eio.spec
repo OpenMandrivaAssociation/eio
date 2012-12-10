@@ -14,22 +14,23 @@
 #% define svndate 20120103
 #% define svnrev 	66800
 
-%define	major	1
+%define major	1
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
 
-Summary: 	E17 Input Output Library
-Name: 		eio
-Version:	1.0.1
+Summary:	E17 Input Output Library
+Name:		eio
+Version:	1.7.3
 Release:	1
-License: 	LGPLv2+
-Group: 		Graphical desktop/Enlightenment
-URL: 		http://www.enlightenment.org/
+License:	LGPLv2+
+Group:		Graphical desktop/Enlightenment
+URL:		http://www.enlightenment.org/
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.gz
 
-Buildrequires: gettext-devel
-BuildRequires: pkgconfig(ecore) >= 1.2.1
-BuildRequires: pkgconfig(eina) >= 1.2.1
+BuildRequires:	gettext-devel
+BuildRequires:	pkgconfig(eet) >= 1.7.0
+BuildRequires:	pkgconfig(ecore) >= 1.7.0
+BuildRequires:	pkgconfig(eina) >= 1.7.0
 
 %description
 This library is intended to provide non blocking IO by using thread for all
@@ -40,17 +41,17 @@ This should become one day part of what we call the EFL and be a dependence
 of E17. Feel free to contribute, help is always appreciated !
 
 %package -n %{libname}
-Summary:    Eio library
-Group:      System/Libraries
+Summary:	Eio library
+Group:		System/Libraries
 
 %description -n %{libname}
 This package contains the dynamic libraries from %{name}.
 
 %package -n %{develname}
-Summary:    Eio headers, libraries, documentation and test programs
-Group:      Development/Other
-Requires:   %{libname} = %{version}
-Provides:   %{name}-devel = %{version}-%{release}
+Summary:	Eio headers, libraries, documentation and test programs
+Group:		Development/Other
+Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %{develname}
 Headers and libraries from %{name}
@@ -66,7 +67,6 @@ NOCONFIGURE=1 ./autogen.sh
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %files -n %{libname}
@@ -77,4 +77,25 @@ rm -rf %{buildroot}
 %{_includedir}/%{name}*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*pc
+
+
+
+%changelog
+* Wed Jun 27 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.0.1-1
++ Revision: 807155
+- version update 1.0.1
+
+* Wed Jan 04 2012 Matthew Dawkins <mattydaw@mandriva.org> 0.1.0.66800-0.20120103.1
++ Revision: 756098
+- new snapshot 66800
+- sync spec with UnityLinux
+- cleaned up spec
+
+* Sat Dec 18 2010 Funda Wang <fwang@mandriva.org> 0.1.0.55225-1mdv2011.0
++ Revision: 622801
+- new version 0.1.0.55225
+
+* Tue Nov 16 2010 Funda Wang <fwang@mandriva.org> 0.1.0.54504-1mdv2011.0
++ Revision: 597992
+- import eio
 

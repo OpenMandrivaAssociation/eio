@@ -1,2 +1,4 @@
 sources:
-  "eio-1.0.1.tar.gz:"	34144fe3546a5130f276f1426fdebaa694101583
+  "eio-1.7.1.tar.gz": ae9d1760c417e37d3df65181df532daa81e51281
+  eio-1.7.2.tar.gz: ce242ab4d3ec2659e4986694e5ed99932d9faa99
+  eio-1.7.3.tar.gz: aaf54bfaee1ddae9bbff89da0178b56605df6048
