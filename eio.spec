@@ -4,12 +4,12 @@
 
 Summary:	E17 Input Output Library
 Name:		eio
-Version:	1.7.5
+Version:	1.7.6
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/Enlightenment
 URL:		http://www.enlightenment.org/
-Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
+Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.gz
 
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(eet) >= 1.7.0
