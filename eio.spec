@@ -4,13 +4,12 @@
 
 Summary:	E17 Input Output Library
 Name:		eio
-Version:	1.7.7
+Version:	1.7.8
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/Enlightenment
-URL:		http://www.enlightenment.org/
+Url:		http://www.enlightenment.org/
 Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
-
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(eet) >= 1.7.0
 BuildRequires:	pkgconfig(ecore) >= 1.7.0
@@ -34,8 +33,8 @@ This package contains the dynamic libraries from %{name}.
 %package -n %{devname}
 Summary:	Eio headers, libraries, documentation and test programs
 Group:		Development/Other
-Requires:	%{libname} = %{version}-%{release}
-Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
 Headers and libraries from %{name}
@@ -53,11 +52,11 @@ Headers and libraries from %{name}
 %makeinstall_std
 
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/libeio.so.%{major}*
 
 %files -n %{devname}
 %doc AUTHORS README ChangeLog NEWS
 %{_includedir}/%{name}*
-%{_libdir}/*.so
+%{_libdir}/libeio.so
 %{_libdir}/pkgconfig/*pc
 
